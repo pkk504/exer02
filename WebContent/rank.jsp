@@ -13,7 +13,7 @@
 <%@ page import="java.sql.*"%>
     <%
     BaseResultDAO dao = new BaseResultDAO();
-    
+    String idd=(String)session.getAttribute("loginid");
     %>
     <%
     long ltime = (long)session.getAttribute("lasttime");
@@ -23,19 +23,19 @@
 	UUID uuid = UUID.randomUUID();
 	String serial = uuid.toString().split("-")[0];
 	
-	String player = request.getParameter("sd1");
+	/* String player = request.getParameter("sd1"); */
 	int cnt = (Integer) session.getAttribute("count");
 	
 	java.sql.Date now = new java.sql.Date(System.currentTimeMillis()); // java.sql.Date
 	
-   String str= request.getParameter("sd1");
+  /*  String str= request.getParameter("sd1");
 	if(str.isEmpty()||str.length()<1){
 		
 		response.sendRedirect("result.jsp");
 		application.setAttribute("login", "on");
-	}
+	} */
 	
-	int r = dao.addData(serial, player, cnt, lasttime, now);
+	dao.addData(serial, idd, cnt, lasttime, now);
 	List<Map<String, Object>> datas = dao.getAllDatas();
 	
 	
@@ -50,14 +50,14 @@ String url="jdbc:oracle:thin:@54.180.8.152:1521:xe";
 	
 	String user="dev";
 	String password="alcls504"; 
-    if(request.getParameter("sd1")==null){
+  /*   if(request.getParameter("sd1")==null){
     	response.sendRedirect("result.jsp");
-    }
+    } */
  
     
-    
+ /*    
     application.setAttribute("sd", cnt);
-  application.setAttribute("name", str);
+  application.setAttribute("name", str); */
     
 	
 	

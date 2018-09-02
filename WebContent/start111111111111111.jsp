@@ -5,6 +5,14 @@
     <%@page import ="java.sql.DriverManager" %>
     <%@page import="java.util.Date" %>
     <%@page import="java.text.SimpleDateFormat" %>
+    <%@page import = "beans.BaseResultDAO" %>
+    
+    <%
+    BaseResultDAO dao = new BaseResultDAO();
+    List<Map<String, Object>> datas = dao.getAllDatas();
+    
+            Map one = dao.getRankTopData();
+        %>
     <%
     int number;
     
@@ -18,17 +26,12 @@
     %>
     
     <%
-		String url="jdbc:oracle:thin:@park.mockingu.com:1521:xe";
-		
-		String user="dev";
-		String password="alcls504"; 
-	Connection conn= 	DriverManager.getConnection(url, user, password);
+		if(session.getAttribute("loginid")==null){
+			response.sendRedirect("log.jsp");
+		}
 	
 	
-	String sql =  "select*from baseresult order by tried asc,elapsed asc" ;
-	PreparedStatement ps = conn.prepareStatement(sql);
 	
-	ResultSet rs=  ps.executeQuery(); 
 
     %>
  <%--    <%=number %> --%>
@@ -70,17 +73,14 @@
 		 <span style="font-size: x-small;"><a href="day.jsp"
 			style="text-decoration: none;">+ 일간 랭킹  , </a></span>
 	</h3>
-		 <%
-		if(rs.next()) {
-			String p1 =	rs.getString("player");
-			int n1 = rs.getInt("tried");
-			Double e1 = rs.getDouble("elapsed");
-			Date d1 = rs.getDate("logdate");%>
-			<br/>최고 경신기록자 : <%=p1%><br/>
-			기록 : <%=n1 %>회  / 걸린시간 : <%=e1%> / 날짜 : <%=d1 %>  
-			
-		<%}%>
-		<%conn.close(); %>
+	<%if(one != null) { %>
+			<b>RANk#1. <%=one.get("player")%></b><br>
+			<small>시도횟수 : <%=one.get("tried")%> / <%=one.get("elapsed")%> sec / <%=one.get("logdate")%></small>
+		<%}else { %>
+			-
+		<%} %>
+		
+		
 		<%-- <%if(session.getAttribute("user")==null){
 			session.setAttribute("user", "on");
 		}%>

@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%
+    	session.removeAttribute("iddd");	
+    
+    session.removeAttribute("pass1");
+    		%>
+    		
 
 <!DOCTYPE html>
 <html>
@@ -8,22 +14,22 @@
 <title>로그인</title>
 </head>
 <body style="text-align: center;">
-<form action="login2.jsp">
+<form action="log12.jsp">
 	ID :  <input type="text" name="id" style="text-aligb: center;font-size: 15pt"/><br/>
 	PASSWORD :	<input type="text" name="pass" style="text-aligb: center;font-size: 15pt"/>
-		<button type="submit" style="text-aligb: center;font-size: 15pt">CHECK</button>
+		<button type="submit" style="text-aligb: center;font-size: 15pt">확인</button>
 		
 	</form>
 	<br/>
 	<form action="join.jsp">
 	
-		<button type="submit" style="text-aligb: center;font-size: 15pt">회원가입    </button>
+		<button type="submit" style="text-aligb: center;font-size: 10pt">회원가입    </button>
 		
 	</form>
 	<br/>
-	<form action="changed.jsp">
+	<form action="change.jsp">
 	
-		<button type="submit" style="text-aligb: center;font-size: 15pt">비밀번호변경</button>
+		<button type="submit" style="text-aligb: center;font-size: 10pt">비밀번호변경</button>
 		
 	</form>
 

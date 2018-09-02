@@ -21,37 +21,25 @@ String id = request.getParameter("id");
 String pass = request.getParameter("pass");
 boolean accid=false;
 boolean accpass=false;
+String id1=null;
+String pass2=null;
 boolean ok=false;
+Map<String,Object> each=null;
 for(int cnt =0; cnt<datas.size();cnt++){
-	Map<String,Object> each = datas.get(cnt);
-	if(each.get("id").equals(id)){
-		accid=true;
-	
-		}
+	each = datas.get(cnt);
 	/* if(each.get("pass").equals(pass)){
 		accpass=true;login2.jsp
 	}else{
 		accpass =false;
 	} */
+	if(each.get("id").equals(id)&&each.get("pass").equals(pass)){
+		id1=(String)each.get("id");
+		pass2 =(String)each.get("pass");
+		}
 	}
 
-for(int cnt =0; cnt<datas.size();cnt++){
-	Map<String,Object> each = datas.get(cnt);
-	
-	 if(each.get("pass").equals(pass)){
-		accpass=true;
-	}
-	
 
 
-
-
-}
-
-if(accid==true&&accpass==true){
-	ok=true;
-	session.setAttribute("login", "on");
-}
 
 
 %>
@@ -64,11 +52,13 @@ if(accid==true&&accpass==true){
 	<p>
 		
 		<%
-		if(ok==true){%>
-			로그인처리 = <%=ok %><br/>
-			<a href="start.jsp"><button type="button">게임 시작하기</button></a>
+		if(id1!=null&&pass2!=null){%>
+			로그인에 성공하였습니다.
+			<%session.setAttribute("loginid", id1); %>
+			<a href="index.jsp"><button type="button">게임 시작하기</button></a>
+			
 		<% }else{%>
-		로그인처리 = <%=ok %><br/>
+		
 		
 		실패하였습니다.
 		<a href="log.jsp"><button type="button">재로그인</button></a>

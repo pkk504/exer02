@@ -86,6 +86,30 @@ public class Account {
 			return -1;
 		}
 	}
+	
+	public int addupData(String id, String pass1) {
+		String dburl = "jdbc:oracle:thin:@park.mockingu.com:1521:xe";
+		String dbuser = "dev";
+		String dbpassword = "alcls504";
+		try {
+			Connection conn = DriverManager.getConnection(dburl, dbuser, dbpassword);
+			String sql = "update account set pass = ? where id=?"; 
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, pass1);
+			ps.setString(2, id);
+			
+			
+			int n = ps.executeUpdate(); // send → receive 작업을 함.
+			conn.close();
+			return n;
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("실패했내유");
+			return -1;
+		}
+	}
+	
+	
 }
 			
 	

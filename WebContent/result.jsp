@@ -72,10 +72,10 @@
 		
 		long ltime = System.currentTimeMillis();
 		session.setAttribute("lasttime",ltime ); %>
-		정답입니다!! 기록하시려면 이름을 적어주시고 다음버튼을 눌러주세요.
-		공백은 허용되지 않습니다.
+		정답입니다!! 
+		
 			<form action="rank.jsp">
-		<input type="text" name="sd1" style="text-aligb: center;font-size: 15pt" min="1" max="15"/>
+		
 		<button type="submit" style="text-aligb: center;font-size: 15pt">다음</button>
 		
 	</form>
