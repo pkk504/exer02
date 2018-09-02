@@ -21,7 +21,7 @@
 		
 	</form>
 	<br/>
-	<form action="join.jsp">
+	<form action="changed.jsp">
 	
 		<button type="submit" style="text-aligb: center;font-size: 15pt">비밀번호변경</button>
 		
