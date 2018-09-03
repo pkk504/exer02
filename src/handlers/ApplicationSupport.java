@@ -40,6 +40,7 @@ public class ApplicationSupport implements ServletContextAttributeListener{
 	public void attributeRemoved(ServletContextAttributeEvent scae) {
 		String name = scae.getName();//»èÁ¦µÈ ¹ë·ù
 		System.out.println("ServletContext.attributeRemoved.."+name);
+	
 		
 	}
 	

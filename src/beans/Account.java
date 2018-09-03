@@ -87,7 +87,7 @@ public class Account {
 		}
 	}
 	
-	public int addupData(String id, String pass1) {
+	public int addupData(String pass1, String id) {
 		String dburl = "jdbc:oracle:thin:@park.mockingu.com:1521:xe";
 		String dbuser = "dev";
 		String dbpassword = "alcls504";

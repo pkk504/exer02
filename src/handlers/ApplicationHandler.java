@@ -1,6 +1,8 @@
 package handlers;
 
 import java.util.Date;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
@@ -28,6 +30,7 @@ public void contextInitialized(ServletContextEvent sce) {//만들어질때
 		   } catch(Exception e) {
 			e.printStackTrace();
 		   }
+	   Set<String> set=new LinkedHashSet<>();
 				
 	System.out.println("contextInitialized..");
 	begin = System.currentTimeMillis();
@@ -39,12 +42,15 @@ public void contextInitialized(ServletContextEvent sce) {//만들어질때
 	 * application을 접근할수 있다.
 	 */
 	ServletContext ctx=sce.getServletContext();
+	ctx.setAttribute("users", new LinkedHashSet<>());
+	
+	
 	//JSP에서 사용되는 application 이라는 이름의 객체.
 	int r=(int)(Math.random()*10);
 	ctx.setAttribute("r", r);
 	ctx.setRequestCharacterEncoding("UTF-8"); // Listener에서만 가능
 											//Servlet하위버전에는 없는 메서드
-	ctx.setSessionTimeout(1);
+	/*ctx.setSessionTimeout(1);*/
 	System.out.println("done!");
 
 }
@@ -53,7 +59,10 @@ public void contextInitialized(ServletContextEvent sce) {//만들어질때
 	public void contextDestroyed(ServletContextEvent sce) {//디스트로이 될때
 		System.out.println("contextDestroyed..");
 		long end =System.currentTimeMillis();
+		
+		
 		System.out.println("running time.." +(end-begin)+" ms");
+		
 		
 	}
 }
