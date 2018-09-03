@@ -62,15 +62,12 @@ Set<String> set =(Set)application.getAttribute("users");
 			<%session.setAttribute("loginid", id); %>
 			<%set.add(id); %>
 			<%application.setAttribute("users", set); %>
-			<%
-			LoginLogDao ldao = new LoginLogDao();
 			
-			%>
 			
 			<br/>
 			<a href="index.jsp"><button type="button">게임 시작하기</button></a>
 			
-		<% }else if(set.contains(id)){%>
+		<% }else if(set.contains(id)||n==0){%>
 		
 		
 		실패하였습니다.

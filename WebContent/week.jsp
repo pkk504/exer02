@@ -16,7 +16,7 @@ import ="java.text.SimpleDateFormat"
 		SimpleDateFormat fmt = new SimpleDateFormat("MM/dd/yyyy"); 
 		Date t = new Date(fmt.format(c));
 		long tt=t.getTime();
-		System.out.println(tt);
+		System.out.println(t);
 		
      long b =dd.getDay();
      System.out.println("요일"+b);

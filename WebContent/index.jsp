@@ -5,6 +5,9 @@
     <%@page import ="java.sql.DriverManager" %>
     <%@page import="java.util.Date" %>
     <%@page import="java.text.SimpleDateFormat" %>
+    <%@page import="beans.*" %>
+    
+    <%@page import="java.util.*" %>
     <%
     int number;
     if(session.getAttribute("loginid")==null){
@@ -114,9 +117,20 @@
 	<br/>
 	<form action="message/send.jsp">
 
-		<button type="submit"style="text-aligb: center;font-size: 15pt">메세지</button>
+		<button type="submit"style="text-aligb: center;font-size: 9pt">쪽지 보내기</button>
 		
 	</form>
+	<br/>
+	<form action="message/receive.jsp">
+	<button type="submit"style="text-aligb: center;font-size:9ps">쪽지함</button>
+	
+	</form>
+	<%
+	String id=(String)session.getAttribute("loginid");
+	Message msg =new Message();
+
+	
+	%>
 	
 </body>
 </html>
