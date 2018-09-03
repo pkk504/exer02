@@ -25,7 +25,7 @@ if(datas !=null ) {
 			
 			<%=n %>
 	보낸사람 : <%=each.get("sender") %>/   받은내용 <%=each.get("content") %>   /보낸시간 : <%=sdf.format(each.get("senddate")) %>
-		/ 받은시간 : 	<%=each.get("receivedate") %><br/> 
+		<br/> <br/> 
 		<%System.out.println(each.get("code")); %>
 			
 			
