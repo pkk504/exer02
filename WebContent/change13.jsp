@@ -19,13 +19,13 @@
 <body style="text-align: center;">
 <%
 Account acc = new Account();
-String id=(String)session.getAttribute("id");
+String id=(String)session.getAttribute("iddd");
 String pass=(String)request.getParameter("pass1");
 
 if(request.getParameter("pass1").equals(request.getParameter("pass2"))){%>
 	<h2>변경 완료되었습니다.</h2><br/>
-	<% acc.addupData(id,pass); %>
-	<form action="change.jsp">
+	<% acc.addupData(pass,id); %>
+	<form action="log.jsp">
 		로그인<button type="submit" style="text-aligb: center;font-size: 13pt">로그인</button>
 	</form>
 <%}else{%>

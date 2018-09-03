@@ -21,29 +21,33 @@
 
 
 <%
+String reg1 = "[A-Za-z\\d]{4,12}";
+String reg2 = "[가-힇]{2,}";
 boolean rst=false;
 boolean rrst=false;
 Account acc = new Account();
 List<Map<String, Object>> datas = acc.getAllDatas();
-
+int n=0 ;
+		String id =request.getParameter("id");
+		String pass =request.getParameter("pass");
+		String name =  request.getParameter("name");
+		String gender = request.getParameter("gender");
 
 
 if(request.getParameter("id").length()<=2||request.getParameter("pass").length()<=1
-||request.getParameter("name").length()<=2||request.getParameter("gender")==null||request.getParameter("gender")==null
-	){
+||request.getParameter("name").length()<=2||request.getParameter("gender")==null||request.getParameter("gender")==null||!id.matches("\\w{4,12}") || !name.matches("[가-힇]{2,}")){
 	response.sendRedirect("join.jsp");
+		
+	}else{
+		n=acc.addData(id, pass, name, gender);
+	
 }
-	for(int cnt =0; cnt<datas.size();cnt++){
-		Map<String,Object> each = datas.get(cnt);
-		if(each.get("id").equals(request.getParameter("id"))||each.get("name").equals(request.getParameter("name"))){
 			
-			
-			session.setAttribute("pass1", "on");
-			
-		}else{
-		}
+		
+	
 
-	}
+	
+
 	
 
 
@@ -63,14 +67,9 @@ if(request.getParameter("id").length()<=2||request.getParameter("pass").length()
 
 %>
 
-<%if(session.getAttribute("pass1")==null){%>
+<%if(n==1){%>
 
-<%String id =request.getParameter("id");
-			String pass =request.getParameter("pass");
-			String name =  request.getParameter("name");
-			String gender = request.getParameter("gender");
-			acc.addData(id, pass, name, gender);%>
-	
+
 
 
 

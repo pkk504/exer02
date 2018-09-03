@@ -106,7 +106,7 @@ String url="jdbc:oracle:thin:@54.180.8.152:1521:xe";
 	
 			
     %>
-    <%=datas.size() %>
+    
 <%
 		if(datas !=null ) {
 			for(int i=0; i<datas.size(); i++) {

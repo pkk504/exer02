@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%	session.removeAttribute("pass1");  %>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -11,7 +12,7 @@
 <form action="join12.jsp">
 	
 	ID :<input type="text" name="id" style="text-aligb: center;font-size: 15pt"/><br/>
-	PASSWORD :<input type="text" name="pass" style="text-aligb: center;font-size: 15pt"/><br/>
+	PASSWORD :<input type="password" name="pass" style="text-aligb: center;font-size: 15pt"/><br/>
 	NAME :<input type="text" name="name" style="text-aligb: center;font-size: 15pt"/><br/>
 	GENDER :<input type ="radio" name="gender" value="남"/> 남
 		<input type ="radio" name="gender" value="여"/> 여<br/>

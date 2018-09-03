@@ -12,7 +12,7 @@
 <H2>비밀번호 변경을 위해 ID 와 PASSWORD 를 입력해주세요.</H2>
 <form action="change12.jsp">
 	ID :  <input type="text" name="id" style="text-aligb: center;font-size: 15pt"/><br/>
-	PASSWORD :	<input type="text" name="pass" style="text-aligb: center;font-size: 15pt"/>
+	PASSWORD :	<input type="password" name="pass" style="text-aligb: center;font-size: 15pt"/>
 		<button type="submit" style="text-aligb: center;font-size: 15pt">CHECK</button>
 		
 	</form>

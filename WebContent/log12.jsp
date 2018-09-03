@@ -10,6 +10,8 @@
     <%@page import = "beans.Account" %>
     <%@ page import="java.util.*"%>
 <%@ page import="java.sql.*"%>
+<%@ page import="beans.*" %>
+<%@ page import="java.util.*" %>
 <!DOCTYPE html>
 <%! %>
 
@@ -25,6 +27,7 @@ String id1=null;
 String pass2=null;
 boolean ok=false;
 Map<String,Object> each=null;
+int n=0;
 for(int cnt =0; cnt<datas.size();cnt++){
 	each = datas.get(cnt);
 	/* if(each.get("pass").equals(pass)){
@@ -33,13 +36,15 @@ for(int cnt =0; cnt<datas.size();cnt++){
 		accpass =false;
 	} */
 	if(each.get("id").equals(id)&&each.get("pass").equals(pass)){
-		id1=(String)each.get("id");
-		pass2 =(String)each.get("pass");
+		n=1;
+		id1=(String)each.get("id"); 
+		}else if(each.get("id").equals(id)&&each.get("pass").equals(pass)||application.getAttribute("set")!=null){
+			n=0;
 		}
 	}
 
 
-
+Set<String> set =(Set)application.getAttribute("users");
 
 
 %>
@@ -52,12 +57,20 @@ for(int cnt =0; cnt<datas.size();cnt++){
 	<p>
 		
 		<%
-		if(id1!=null&&pass2!=null){%>
+		if(n==1&&!set.contains(id)){%>
 			로그인에 성공하였습니다.
-			<%session.setAttribute("loginid", id1); %>
+			<%session.setAttribute("loginid", id); %>
+			<%set.add(id); %>
+			<%application.setAttribute("users", set); %>
+			<%
+			LoginLogDao ldao = new LoginLogDao();
+			
+			%>
+			
+			<br/>
 			<a href="index.jsp"><button type="button">게임 시작하기</button></a>
 			
-		<% }else{%>
+		<% }else if(set.contains(id)){%>
 		
 		
 		실패하였습니다.

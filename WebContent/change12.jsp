@@ -41,9 +41,10 @@ for(int cnt =0; cnt<datas.size();cnt++){
 
 
 <%if(session.getAttribute("iddd")!=null){%>
+<% session.setAttribute("iddd",request.getParameter("id"));%>
 	<form action="change13.jsp">
-	변경할 PASSWORD  :  <input type="text" name="pass1" style="text-aligb: center;font-size: 15pt"/><br/>
-	재확인 PASSWORD :	<input type="text" name="pass2" style="text-aligb: center;font-size: 15pt"/><br/>
+	변경할 PASSWORD  :  <input type="password" name="pass1" style="text-aligb: center;font-size: 15pt"/><br/>
+	재확인 PASSWORD :	<input type="password" name="pass2" style="text-aligb: center;font-size: 15pt"/><br/>
 		<button type="submit" style="text-aligb: center;font-size: 13pt">비밀번호변경</button>
 		
 	</form>

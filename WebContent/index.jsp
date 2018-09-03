@@ -45,6 +45,7 @@
 	<h1>미니게임 - Base Ball</h2>	
 	<p>
 		<a href="turn.jsp"><button type="button">S T A R T</button></a>
+	
 		<%
 			
 			Integer v = (Integer) application.getAttribute("sd");
@@ -99,7 +100,23 @@
 		<%-- <%
 			session.setAttribute("count", 1);
 		%> --%>
+		<br/>
 	</p>
+		<form action="logout.jsp">
+	
+	
+		<button type="submit" style="text-aligb: center;font-size: 15pt">로그아웃</button>
+		
+		
+	
+	</form>
+	<br/>
+	<br/>
+	<form action="message/send.jsp">
+
+		<button type="submit"style="text-aligb: center;font-size: 15pt">메세지</button>
+		
+	</form>
 	
 </body>
 </html>
