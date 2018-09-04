@@ -22,4 +22,14 @@
 <listener-class> handlers.SessionHandler</listener-class>
 
 </listener>
+
+<filter>
+	<filter-name>login</filter-name>
+	<filter-class>filters.Filter</filter-class>
+</filter>
+
+<filter-mapping>
+	<filter-name>login</filter-name>
+	<url-pattern>/message/*</url-pattern>
+</filter-mapping>
 </web-app>

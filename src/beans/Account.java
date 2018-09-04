@@ -82,7 +82,7 @@ public class Account {
 			return n;
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("실패했내유");
+			
 			return -1;
 		}
 	}
@@ -108,6 +108,15 @@ public class Account {
 			return -1;
 		}
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 }

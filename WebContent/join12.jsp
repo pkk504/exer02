@@ -34,8 +34,7 @@ int n=0 ;
 		String gender = request.getParameter("gender");
 
 
-if(request.getParameter("id").length()<=2||request.getParameter("pass").length()<=1
-||request.getParameter("name").length()<=2||request.getParameter("gender")==null||request.getParameter("gender")==null||!id.matches("\\w{4,12}") || !name.matches("[가-힇]{2,}")){
+if(!id.matches("\\w{4,12}") || !name.matches("[가-힇]{2,}")){
 	response.sendRedirect("join.jsp");
 		
 	}else{

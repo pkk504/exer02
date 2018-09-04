@@ -25,6 +25,7 @@ public class Message {
 			ps.setString(3, receiver);
 			ps.setString(4, content);
 			ps.setDate(5, senddate );
+			
 		
 			
 			int n = ps.executeUpdate(); // send → receive 작업을 함.
@@ -57,6 +58,7 @@ public class Message {
 				one.put("receiver", rs.getString("receiver"));
 				one.put("content", rs.getString("content"));
 				one.put("senddate", rs.getDate("senddate"));
+				one.put("receivedate", rs.getDate("receivedate"));
 				ret.add(one);
 				}while(rs.next());
 			}else {
@@ -75,8 +77,10 @@ public class Message {
 	
 	
 	
-	public int addreceivedate(String code) {
+	public int addreceivedate(String receiver) {
+		SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-dd HH:mm:ss");
 		
+		sdf.format(new Date(System.currentTimeMillis()));
 				
 		     
 		 
@@ -86,10 +90,10 @@ public class Message {
 		String dbpassword = "alcls504";
 		try {
 			Connection conn = DriverManager.getConnection(dburl, dbuser, dbpassword);
-			String sql = "update message set receivedate = ? where code=?"; 
+			String sql = "update message set receivedate = ? where receiver= ? and receivedate is null"; 
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setDate(1,new Date(System.currentTimeMillis()));
-			ps.setString(2, "code");
+			ps.setString(2, receiver);
 			
 			
 			int n = ps.executeUpdate(); // send → receive 작업을 함.
@@ -107,7 +111,7 @@ public class Message {
 	
 	
 	
-	
+
 	
 	
 	

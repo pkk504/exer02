@@ -13,10 +13,11 @@ import ="java.text.SimpleDateFormat"
      java.sql.Date dd = new java.sql.Date(System.currentTimeMillis());
      long d = System.currentTimeMillis();
 		Date c = new Date(d);
+		c.getTime();
 		SimpleDateFormat fmt = new SimpleDateFormat("MM/dd/yyyy"); 
 		Date t = new Date(fmt.format(c));
 		long tt=t.getTime();
-		System.out.println(t);
+		System.out.println(tt);
 		
      long b =dd.getDay();
      System.out.println("요일"+b);

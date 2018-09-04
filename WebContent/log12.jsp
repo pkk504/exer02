@@ -48,12 +48,7 @@ Set<String> set =(Set)application.getAttribute("users");
 
 
 %>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>로그인 처리</title>
-</head>
-<body style="text-align: center;">
+<%@ include file="/layout/top.jspf"%>
 	<p>
 		
 		<%
@@ -65,13 +60,13 @@ Set<String> set =(Set)application.getAttribute("users");
 			
 			
 			<br/>
-			<a href="index.jsp"><button type="button">게임 시작하기</button></a>
+			
 			
 		<% }else if(set.contains(id)||n==0){%>
 		
 		
 		실패하였습니다.
-		<a href="log.jsp"><button type="button">재로그인</button></a>
+		
 		
 		<%}%>
 		

@@ -11,13 +11,7 @@
     <%@ page import="java.util.*"%>
 <%@ page import="java.sql.*"%>
 <%!%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="EUC-KR">
-<title>비밀번호변경</title>
-</head>
-<body style="text-align: center;">
+<%@ include file="/layout/top.jspf"%>
 <%
 Account acc = new Account();
 List<Map<String, Object>> datas = acc.getAllDatas();
@@ -42,9 +36,10 @@ for(int cnt =0; cnt<datas.size();cnt++){
 
 <%if(session.getAttribute("iddd")!=null){%>
 <% session.setAttribute("iddd",request.getParameter("id"));%>
+<br/>
 	<form action="change13.jsp">
-	변경할 PASSWORD  :  <input type="password" name="pass1" style="text-aligb: center;font-size: 15pt"/><br/>
-	재확인 PASSWORD :	<input type="password" name="pass2" style="text-aligb: center;font-size: 15pt"/><br/>
+	변경할 PASSWORD  :  <input type="text" placeholder="password" style = "width :220px; padding: 5px;" name="pass1"/><br/><br/>
+	재확인 PASSWORD :	<input type="text" placeholder="password" style = "width :220px; padding: 5px;" name="pass2"/><br/><br/>
 		<button type="submit" style="text-aligb: center;font-size: 13pt">비밀번호변경</button>
 		
 	</form>

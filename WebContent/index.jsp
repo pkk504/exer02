@@ -13,6 +13,7 @@
     if(session.getAttribute("loginid")==null){
     	response.sendRedirect("log.jsp");
     }
+    session.removeAttribute("qhsorl");
     
     do{
 	number = 100 + (int)(Math.random()*900);

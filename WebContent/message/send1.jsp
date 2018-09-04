@@ -15,25 +15,28 @@
    
     
     
- int n= msg.addData(code, sender, receiver, content,senddate);
+    int n=10;
  
 
     
     
     %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+<%@ include file="/layout/top.jspf"%>
 <p>
+<% 
+if(!sender.equals(receiver)){
+	n= msg.addData(code, sender, receiver, content,senddate);
+}else if(sender.equals(receiver)){%>
+	
+<%}%>
  <% if(n==1){
-	 response.sendRedirect("send.jsp");
- }else{%>
+	 
+	 session.setAttribute("qhsorl", "on");%>
+	 <b>성공하셨습니다.<b/>
+	 <a href="send.jsp"><button type="button">메시지보내기</button></a><br/>
+ <%}else if(n!=1||sender.equals(receiver)){%>
 	보내기 실패하셨습니다<br/>
-	<a href="send.jsp"><button type="button">다시보내기</button></a>
+	<a href="send.jsp"><button type="button">다시보내기</button></a><br/>
 	 
  <%} %>
 </p>
