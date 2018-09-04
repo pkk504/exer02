@@ -37,7 +37,7 @@ import ="java.text.SimpleDateFormat"
 </head>
 <body style="text-align: center">
 <p>
-<a href="index.jsp"><button type="button">되돌아가기</button></a><br/>
+<a href="starter.jsp"><button type="button">되돌아가기</button></a><br/>
 <b><H2> !!주간 랭킹!! </H2></b><br/>
 <%
 try {

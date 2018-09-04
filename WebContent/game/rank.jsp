@@ -86,7 +86,7 @@ String url="jdbc:oracle:thin:@54.180.8.152:1521:xe";
 </head>
 <body style="text-align: center">
 <h1>#완료되었습니다.#</h1>
-<a href="index.jsp"><button type="button">되돌아가기</button></a>
+<a href="starter.jsp"><button type="button">되돌아가기</button></a>
 <p>
  <%
 		
