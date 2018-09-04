@@ -17,7 +17,7 @@ public class LoginFilter extends HttpFilter{
 			throws IOException, ServletException {
 		HttpSession session = request.getSession();
 		if(session.getAttribute("loginpass")==null) {
-			response.sendRedirect(request.getContextPath()+"/");
+			response.sendRedirect("/exer02/index.jsp");
 		}else if(session.getAttribute("loginpass")!=null) {
 			chain.doFilter(request, response);
 		}
