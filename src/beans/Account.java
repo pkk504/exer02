@@ -109,6 +109,40 @@ public class Account {
 		}
 	}
 	
+	public Map<String,Object> iddata() {
+String url="jdbc:oracle:thin:@park.mockingu.com:1521:xe";
+		
+		String user="dev";
+		String password="alcls504"; 
+	
+		try {
+			Connection conn= 	DriverManager.getConnection(url, user, password);
+			String sql =  "select*from account " ;
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs=  ps.executeQuery(); 
+			
+			Map ret;
+			if(rs.next()) {
+				ret=new LinkedHashMap<>();
+				ret.put("id", rs.getString("id"));
+				
+			}else {
+				ret=null;
+			}
+			conn.close();
+			return ret;
+
+			
+			
+		}catch(Exception e) {
+			
+			e.printStackTrace();
+			return null;
+		}
+		
+		
+	}
+	
 	
 	
 	

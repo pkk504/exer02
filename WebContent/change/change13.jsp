@@ -20,9 +20,7 @@ String pass=(String)request.getParameter("pass1");
 if(request.getParameter("pass1").equals(request.getParameter("pass2"))){%>
 	<h2>변경 완료되었습니다.</h2><br/>
 	<% acc.addupData(pass,id); %>
-	<form action="/exer02/index.jsp">
-		로그인<button type="submit" style="text-aligb: center;font-size: 13pt">로그인</button>
-	</form>
+	
 <%}else if(!request.getParameter("pass1").equals(request.getParameter("pass2"))||request.getParameter("pass1").length()<=4||request.getParameter("pass2").length()<=4){%>
 	<H2>서로다른 password 입니다.</H2><br/>
 	 <form action="change.jsp">

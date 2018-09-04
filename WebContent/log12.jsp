@@ -55,6 +55,7 @@ Set<String> set =(Set)application.getAttribute("users");
 		if(n==1&&!set.contains(id)){%>
 			로그인에 성공하였습니다.
 			<%session.setAttribute("loginid", id); %>
+			<%session.setAttribute("password", pass); %>
 			<%set.add(id); %>
 			<%application.setAttribute("users", set); %>
 			<button type ="submit">게임방 들어가기</button>

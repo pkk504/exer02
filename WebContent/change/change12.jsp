@@ -17,10 +17,20 @@ System.out.print("change12 의 리얼경로"+path);
 Account acc = new Account();
 List<Map<String, Object>> datas = acc.getAllDatas();
 boolean rst;
+String id =(String)session.getAttribute("loginid");
+String pass =(String)session.getAttribute("password");%>
+
+<%
+if(id.equals(request.getParameter("id"))&&pass.equals(request.getParameter("pass"))){
+	session.setAttribute("iddd","on");
+}
 
 
 
-for(int cnt =0; cnt<datas.size();cnt++){
+%>
+<%-- 
+
+<%for(int cnt =0; cnt<datas.size();cnt++){
 	Map<String,Object> 	each = datas.get(cnt);
 	if(each.get("id").equals(request.getParameter("id"))&&each.get("pass").equals(request.getParameter("pass"))){%>
 	<%
@@ -32,9 +42,9 @@ for(int cnt =0; cnt<datas.size();cnt++){
 %> 
 	
 	<%
-}}%>
-
-
+}}%> 
+--%>
+<%-- 
 <%if(session.getAttribute("iddd")!=null){%>
 <% session.setAttribute("iddd",request.getParameter("id"));%>
 <br/>
@@ -49,7 +59,24 @@ for(int cnt =0; cnt<datas.size();cnt++){
 <form action="change.jsp">
 	존재하지 않거나 틀린 정보입니다.<br/>
 		<button type="submit" style="text-aligb: center;font-size: 13pt">다시입력하기</button>
+	<% }%> --%>
+	
+	<%if(session.getAttribute("iddd")!=null){%>
+<% session.setAttribute("iddd",request.getParameter("id"));%>
+<br/>
+	<form action="change13.jsp">
+	변경할 PASSWORD  :  <input type="text" placeholder="password" style = "width :220px; padding: 5px;" name="pass1"/><br/><br/>
+	재확인 PASSWORD :	<input type="text" placeholder="password" style = "width :220px; padding: 5px;" name="pass2"/><br/><br/>
+		<button type="submit" style="text-aligb: center;font-size: 13pt">비밀번호변경</button>
+		
+	</form>
+	<%} else {%>
+	
+<form action="change.jsp">
+	존재하지 않거나 틀린 정보입니다.<br/>
+		<button type="submit" style="text-aligb: center;font-size: 13pt">다시입력하기</button>
 	<% }%>
+	
 
 
 

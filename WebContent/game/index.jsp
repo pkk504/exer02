@@ -1,3 +1,5 @@
+
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@page import="java.util.*"%>
@@ -126,6 +128,12 @@
 	<form action="/exer02/message/receive.jsp">
 	<button type="submit"style="text-aligb: center;font-size:9ps">쪽지함</button>
 	
+	</form>
+	<br/>
+	<form action="/exer02/change/change.jsp">
+	
+		<button type="submit" style="text-aligb: center;font-size: 8pt">비밀번호변경</button>
+		
 	</form>
 	<%
 	String id=(String)session.getAttribute("loginid");

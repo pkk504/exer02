@@ -32,11 +32,7 @@
 		
 	</form>
 	<br/>
-	<form action="change/change.jsp">
 	
-		<button type="submit" style="text-aligb: center;font-size: 8pt">비밀번호변경</button>
-		
-	</form>
 	<%System.out.println(request.getContextPath()); 
 	String uri = request.getRequestURI();
 	String query= request.getQueryString();

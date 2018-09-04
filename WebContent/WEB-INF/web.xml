@@ -60,6 +60,17 @@
 		<url-pattern>/log12.jsp</url-pattern>
 </filter-mapping>
 
+<filter>
+	<filter-name>change</filter-name>
+	<filter-class>filters.Filter</filter-class>
+</filter>
+
+<filter-mapping>
+	<filter-name>change</filter-name>
+	<url-pattern>/change/*</url-pattern>
+</filter-mapping>
+
+
 
 
 
