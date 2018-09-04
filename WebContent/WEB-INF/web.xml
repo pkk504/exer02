@@ -22,6 +22,22 @@
 <listener-class> handlers.SessionHandler</listener-class>
 
 </listener>
+<filter>
+	<filter-name>join</filter-name>
+	<filter-class>filters.JoinFilter</filter-class>
+</filter>
+<filter-mapping>
+		<filter-name>join</filter-name>
+		<url-pattern>/join/join12.jsp</url-pattern>
+</filter-mapping>
+<filter>
+	<filter-name>login</filter-name>
+	<filter-class>filters.LoginFilter</filter-class>
+</filter>
+<filter-mapping>
+		<filter-name>login</filter-name>
+		<url-pattern>/log12.jsp</url-pattern>
+</filter-mapping>
 
 <filter>
 	<filter-name>message</filter-name>
@@ -42,23 +58,7 @@
 		<url-pattern>/game/*</url-pattern>
 </filter-mapping>
 
-<filter>
-	<filter-name>join</filter-name>
-	<filter-class>filters.JoinFilter</filter-class>
-</filter>
-<filter-mapping>
-		<filter-name>join</filter-name>
-		<url-pattern>/join/join12.jsp</url-pattern>
-</filter-mapping>
 
-<filter>
-	<filter-name>login</filter-name>
-	<filter-class>filters.LoginFilter</filter-class>
-</filter>
-<filter-mapping>
-		<filter-name>login</filter-name>
-		<url-pattern>/log12.jsp</url-pattern>
-</filter-mapping>
 
 <filter>
 	<filter-name>change</filter-name>
