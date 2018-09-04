@@ -50,15 +50,15 @@ Set<String> set =(Set)application.getAttribute("users");
 %>
 <%@ include file="/layout/top.jspf"%>
 	<p>
-		
+		<form action ="game/index.jsp">
 		<%
 		if(n==1&&!set.contains(id)){%>
 			로그인에 성공하였습니다.
 			<%session.setAttribute("loginid", id); %>
 			<%set.add(id); %>
 			<%application.setAttribute("users", set); %>
-			
-			
+			<button type ="submit">게임방 들어가기</button>
+			</form>
 			<br/>
 			
 			

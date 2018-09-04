@@ -18,14 +18,15 @@
 		<input type ="radio" name="gender" value="여"/> 여<br/>
 		<button type="submit" style="text-aligb: center;font-size: 15pt">회원가입</button>
 		
+		
 	<h3><b>ID,PASSWORD,NAME 3글자이상.</b></h3>
 	</form>
-	
+	<%session.setAttribute("join", "on"); %>
 	
 	<br/>
 
 	
-	<form action="log.jsp">
+	<form action="/exer02/index.jsp">
 	
 		<b><small>로그인 하러가기</small></b>  <button type="submit" style="text-aligb: center;font-size: 15pt"><b>로그인</b></button>
 		

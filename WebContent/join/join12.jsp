@@ -33,13 +33,14 @@ int n=0 ;
 		String name =  request.getParameter("name");
 		String gender = request.getParameter("gender");
 
-
+if(id!=null&&name!=null){
 if(!id.matches("\\w{4,12}") || !name.matches("[가-힇]{2,}")){
 	response.sendRedirect("join.jsp");
 		
 	}else{
 		n=acc.addData(id, pass, name, gender);
 	
+}
 }
 			
 		
@@ -73,7 +74,7 @@ if(!id.matches("\\w{4,12}") || !name.matches("[가-힇]{2,}")){
 
 
 <h2>회원가입에 성공하셨습니다.</h2>
-<form action="log.jsp">
+<form action="/exer02/index.jsp">
 	
 	
 		<button type="submit" style="text-aligb: center;font-size: 15pt">로그인</button>

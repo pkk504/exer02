@@ -56,13 +56,19 @@ if(datas !=null ) {
 
 <%@ include file="/layout/top.jspf"%>
 
+
+<% 
+String id=(String)session.getAttribute("loginid");
+
+Message msg =new Message();
+msg.addreceivedate(id);
+
+%>  
+
 <%
 UUID uuid= UUID.randomUUID();
 SimpleDateFormat sdf = new SimpleDateFormat("HH:mm MM.dd.YYYY");
-String id=(String)session.getAttribute("loginid");
-Message msg =new Message();
 List<Map<String, Object>> datas = msg.receive(id);
-/* msg.addreceivedate(id);  */
 
 
 
@@ -72,12 +78,13 @@ if(datas !=null ) {
 	
 			
 			
-	보낸사람 : <%=each.get("sender") %>/   받은내용 : <%=each.get("content") %>   /   받은시간 : <%=sdf.format(each.get("senddate")) %>  /  
+	보낸사람 : <%=each.get("sender") %> <br/> 받은내용 : <%=each.get("content") %>   <br/> 받은시간 : <%=sdf.format(each.get("senddate")) %>    
 	 
-	<%if(each.get("receivedate")!=null){ %> 읽은 시간 : <%=sdf.format(each.get("receivedate")) %> 
-	<%} %>
+	<br/> 읽은 시간 : <%=sdf.format(each.get("receivedate")) %> 
+	
 		<br/> <br/> 
-		
+	--------------------------------------------------------------------------------------------------------------------
+		<br/> <br/> <br/> 
 			
 			
 	

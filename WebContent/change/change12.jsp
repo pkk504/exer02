@@ -12,7 +12,8 @@
 <%@ page import="java.sql.*"%>
 <%!%>
 <%@ include file="/layout/top.jspf"%>
-<%
+<%String path =request.getRealPath("change12.jsp");
+System.out.print("change12 의 리얼경로"+path);
 Account acc = new Account();
 List<Map<String, Object>> datas = acc.getAllDatas();
 boolean rst;
@@ -52,7 +53,7 @@ for(int cnt =0; cnt<datas.size();cnt++){
 
 
 
-
+	
 
 
 	

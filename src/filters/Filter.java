@@ -30,7 +30,7 @@ protected void doFilter(HttpServletRequest request, HttpServletResponse response
 	 
 	}else if(session.getAttribute("loginid")==null){
 	
-		response.sendRedirect(request.getContextPath()+"/log.jsp");
+		response.sendRedirect(request.getContextPath()+"/");
 	}
 
 

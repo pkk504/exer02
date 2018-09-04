@@ -33,7 +33,7 @@ if(!sender.equals(receiver)){
 	 
 	 session.setAttribute("qhsorl", "on");%>
 	 <b>성공하셨습니다.<b/>
-	 <a href="send.jsp"><button type="button">메시지보내기</button></a><br/>
+	 <a href="send.jsp">메시지보내기</a><br/>
  <%}else if(n!=1||sender.equals(receiver)){%>
 	보내기 실패하셨습니다<br/>
 	<a href="send.jsp"><button type="button">다시보내기</button></a><br/>
