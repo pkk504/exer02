@@ -15,7 +15,7 @@ import="java.sql.ResultSet"
 </head>
 <body style="text-align: center">
 <p>
-<a href="starter.jsp"><button type="button">되돌아가기</button></a><br/>
+<a href="index.jsp"><button type="button">되돌아가기</button></a><br/>
 <b><H2> !!일간 랭킹!! </H2></b><br/>
 <%
 Date dd = new Date(System.currentTimeMillis());
