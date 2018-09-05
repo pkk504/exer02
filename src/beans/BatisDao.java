@@ -55,6 +55,17 @@ public class BatisDao {
 		
 	}
 	
+	public String getNodata() {
+		SqlSession sql = factory.openSession();
+		try {
+			String p = sql.selectOne("board.getNo");
+			return p;
+		}catch(Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
 	
 	/*
 	

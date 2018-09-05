@@ -26,7 +26,7 @@
 	<br/>
 
 	
-	<form action="/exer02/index.jsp">
+	<form action="<%=application.getContextPath() %>/index.jsp">
 	
 		<b><small>로그인 하러가기</small></b>  <button type="submit" style="text-aligb: center;font-size: 15pt"><b>로그인</b></button>
 		

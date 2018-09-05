@@ -48,7 +48,7 @@
 				<%-- 실제업로드한 경로 : <%=saveDir%> <br/>				
 				당신이 접근할수 있게 설정된 uri : 
 					<%=request.getContextPath() %>/storage/<%=fn %><br/> --%>
-				<%if(fn!=null){ %>
+				<%if(fpt!=null){ %>
 		<% 	map.put("attach",application.getContextPath()+ "/storage/"+time+"/"+fn);%>
 				<%-- <a download href="<%=application.getContextPath()%>/storage/<%=time %>/<%=fn%>">다운</a> --%>
 				<%}else{ %>
@@ -66,9 +66,9 @@
 	}
 	long rr =1+(long)(Math.random()*10000);
 	long rrr =2+(long)(Math.random()*10000);
-	
+		String no = dao.getNodata();
 			map.put("writer", writer); 
-			map.put("no", (Number)rr);
+			map.put("no", no);
 			map.put("good", (Number)rrr);
 			%>
 		

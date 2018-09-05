@@ -119,18 +119,18 @@
 	</form>
 	<br/>
 	<br/>
-	<form action="/exer02/message/send.jsp">
+	<form action="<%=application.getContextPath() %>/message/send.jsp">
 
 		<button type="submit"style="text-aligb: center;font-size: 9pt">쪽지 보내기</button>
 		
 	</form>
 	<br/>
-	<form action="/exer02/message/receive.jsp">
+	<form action="<%=application.getContextPath() %>/message/receive.jsp">
 	<button type="submit"style="text-aligb: center;font-size:9ps">쪽지함</button>
 	
 	</form>
 	<br/>
-	<form action="/exer02/change/change.jsp">
+	<form action="<%=application.getContextPath() %> /change/change.jsp">
 	
 		<button type="submit" style="text-aligb: center;font-size: 8pt">비밀번호변경</button>
 		
