@@ -28,7 +28,9 @@
 				FilePart fp = (FilePart)part;
 				String fn = fp.getFileName();
 				String fpt = fp.getFilePath();	// 기본 temp저장경로를 설정안하면, 파일명 똑같이 나옴.
-			/* 	File ori = new File(fpt);
+				
+				/* 	File ori = new File(fpt);
+				
 				
 				out.println(ori.length());
 				String fct = fp.getContentType();
@@ -48,11 +50,12 @@
 				<%-- 실제업로드한 경로 : <%=saveDir%> <br/>				
 				당신이 접근할수 있게 설정된 uri : 
 					<%=request.getContextPath() %>/storage/<%=fn %><br/> --%>
-				<%if(fpt!=null){ %>
+					<%out.println("파일이름 =" + fn); %>
+				<%if(fn!=null){ %>
 		<% 	map.put("attach",application.getContextPath()+ "/storage/"+time+"/"+fn);%>
 				<%-- <a download href="<%=application.getContextPath()%>/storage/<%=time %>/<%=fn%>">다운</a> --%>
-				<%}else{ %>
-				<% map.put("attach",null);%>
+				<%}else if(fn==null){ %>
+				<% map.put("attach","open");%>
 				<%} %>
 				<%
 			}else if(part.isParam()) {

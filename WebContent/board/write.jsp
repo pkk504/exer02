@@ -28,7 +28,7 @@
 		no.<%=no %> : <%=title %><br/>				
 		   작성시간 : <%=leftdate %><br/>
 		   파일 : 
-		  		 <%if(attach==null){ %>
+		  		 <%if(map.get("ATTACH").equals("open")){ %>
 				없음.
 				<%}else{ %>
 				<a download href="<%=attach%>">다운</a>
