@@ -7,7 +7,12 @@
 <%@ page import="com.oreilly.servlet.multipart.Part"%>
 <%@ page import="com.oreilly.servlet.multipart.*" %>
 <%@ include file="/layout/top.jspf"%>
-
+	<br/><br/>
+			
+		<h3><a href="write1.jsp">글쓰기</a></h3>
+		<br/>
+	----------------------------------------------	
+		<br/>
 		<h3><b>게시판</b></h3>
 		<%
 		BatisDao dao = new BatisDao();
@@ -42,9 +47,7 @@
 		
 		<%}
 		}%>
-			<br/>
-			<br/>
-		<a href="write1.jsp">게시글 쓰기</a>
+		
 		
 
 

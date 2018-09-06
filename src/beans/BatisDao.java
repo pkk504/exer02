@@ -59,6 +59,7 @@ public class BatisDao {
 		SqlSession sql = factory.openSession();
 		try {
 			String p = sql.selectOne("board.getNo");
+			sql.commit();
 			return p;
 		}catch(Exception e) {
 			e.printStackTrace();

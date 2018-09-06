@@ -55,7 +55,9 @@
 		<% 	map.put("attach","/storage/"+time+"/"+fn);%>
 				<%-- <a download href="<%=application.getContextPath()%>/storage/<%=time %>/<%=fn%>">다운</a> --%>
 				<%}else if(fn==null){ %>
-				<% map.put("attach","open");%>
+				<%-- <% map.put("attach","open"+time);%> --%>
+				<% map.put("attach","open"+time);%>
+				<%session.setAttribute("king","open"+time); %>
 				<%} %>
 				<%
 			}else if(part.isParam()) {
@@ -72,7 +74,7 @@
 		String no = dao.getNodata();
 			map.put("writer", writer); 
 			map.put("no", no);
-			map.put("good", (Number)rrr);
+			map.put("good", (Number)0);
 			%>
 		
 		<% int r=	dao.addboard(map);

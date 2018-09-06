@@ -20,7 +20,7 @@ String writer=(String)one.get("WRITER");
 		String attach =(String)one.get("ATTACH");
 		Number good =(Number)one.get("GOOD");
 		int t =good.intValue();
-		System.out.println(t);
+		System.out.println(good);
 		%>
 		
 		no.<%=no %> <br/>작성자 : <%=title %><br/>				
@@ -31,10 +31,10 @@ String writer=(String)one.get("WRITER");
 		   <br/><br/>
 		   
 		  첨부 파일 : 
-		  		 <%if(one.get("ATTACH").equals("open")){ %>
+		  		 <%if(one.get("ATTACH").equals(session.getAttribute("king"))){ %>
 				없음
 				<%}else{ %>
-				<a download href="<%=application.getContextPath()%><%=attach%>">다운</a>
+				<a href="<%=application.getContextPath()%><%=attach%>" download>다운</a>
 				<%} %><br/><br/>
 		<%-- 		<form action="<%=application.getContextPath()%>/board/good.jsp?gooded=<%=t%>">
 	
@@ -42,7 +42,10 @@ String writer=(String)one.get("WRITER");
 		
 	</form>
 			 --%>	
-			 <a   href="<%=application.getContextPath()%>/board/good.jsp?no=<%=no%>">추천업</a>
+			 <%-- <a   href="<%=application.getContextPath()%>/board/good.jsp?no=<%=no%>">추천업</a> --%>
+			 <a herf="<%=application.getContextPath()%>/board/good.jsp?no=<%=no%>"><samll><b>추천
+				<img src="http://<%=request.getServerName() %>:<%=request.getServerPort() %>/<%=request.getContextPath() %>/image/엄지척.png"style="width: 50px; border-radius: 50px;" /></b></samll></a>
+				<br/><br/>
 -------------------------------------------------------------------------------------------------------
 
 </body>

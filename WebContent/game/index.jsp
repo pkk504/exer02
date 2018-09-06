@@ -138,7 +138,7 @@
 	<br/>
 	<form action="<%=application.getContextPath()%>/board/write.jsp">
 	
-		<button type="submit" style="text-aligb: center;font-size: 8pt">게시글 작성</button>
+		<button type="submit" style="text-aligb: center;font-size: 8pt">게시판</button>
 		
 	</form>
 	<%

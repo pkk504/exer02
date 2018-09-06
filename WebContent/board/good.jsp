@@ -5,7 +5,7 @@
     pageEncoding="UTF-8"%>
     <%-- <%int no=Integer.parseInt(request.getParameter("no")); %> --%>
     <%int no=Integer.parseInt(request.getParameter("no")); %>
-    
+    <%System.out.println(no); %>
     <%BatisDao dao =new BatisDao();
     String id =(String)session.getAttribute("loginid");   
     Map one = dao.getondata(no);
@@ -23,8 +23,10 @@
     	
 			%>
 			<%int a = dao.addgoodlog(map); %>
+			<%System.out.println("게시물 고유로그 등록 여부 ="+a); %>
     
     
+		
     
     
    
@@ -40,11 +42,11 @@
 	<%}else if(a!=1){ %>
 	추천을 한번 찍으셔서 실패하셨습니다.
 	<%} %> --%>
-	<%if(a==1){ %>
-	dao.goodUp(no);
+	<%if(a!=-1){ %>
+	<%dao.goodUp(no);%>
 	성공<br/>
 	<a   href="<%=application.getContextPath()%>/board/writeview.jsp?no=<%=no%>">뒤로가기</a>
-	<%}else{ %>
+	<%}else if(a==-1){ %>
 	실패<br/>
 		<a   href="<%=application.getContextPath()%>/board/writeview.jsp?no=<%=no%>">뒤로가기</a>
 	<%} %>
