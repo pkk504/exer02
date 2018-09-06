@@ -43,7 +43,7 @@ String writer=(String)one.get("WRITER");
 	</form>
 			 --%>	
 			 <%-- <a   href="<%=application.getContextPath()%>/board/good.jsp?no=<%=no%>">추천업</a> --%>
-			 <a herf="<%=application.getContextPath()%>/board/good.jsp?no=<%=no%>"><samll><b>추천
+			 <a href="<%=application.getContextPath()%>/board/good.jsp?no=<%=no%>"><samll><b>추천
 				<img src="http://<%=request.getServerName() %>:<%=request.getServerPort() %>/<%=request.getContextPath() %>/image/엄지척.png"style="width: 50px; border-radius: 50px;" /></b></samll></a>
 				<br/><br/>
 -------------------------------------------------------------------------------------------------------
