@@ -36,7 +36,7 @@ protected void doFilter(HttpServletRequest request, HttpServletResponse response
 		session.setAttribute("uri", uri);
 		session.setAttribute("query", query);
 	
-		response.sendRedirect("/exer02/index.jsp");
+		response.sendRedirect("/index.jsp");
 	}
 
 
