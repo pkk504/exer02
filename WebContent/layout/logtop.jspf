@@ -1,0 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>【Unknown】</title>
+<style type="text/css">
+	a{
+		text-decoration: none;
+	}
+</style>
+</head>
+<body style="text-align: center;">
+	<h1><a href="<%=application.getContextPath()%>/index.jsp" style="text-decoration: none;">건기꺼</a></h1>

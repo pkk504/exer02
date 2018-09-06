@@ -66,6 +66,69 @@ public class BatisDao {
 		}
 	}
 	
+	public Map getondata(int no) {
+		SqlSession sql = factory.openSession();
+		try {
+			/*sql.selectOne("board.getOnData",no);*/
+			return sql.selectOne("board.getOnData",no);
+		}catch(Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	public int goodUp(int no) {
+		SqlSession sql =factory.openSession();
+		try{
+		int r=	sql.update("board.incGood",no);
+		
+			System.out.println(r);
+		sql.commit();
+		return r; 
+		}catch(Exception e) {
+			e.printStackTrace();
+			
+			System.out.println("½ÇÆÐ");
+			return -1;
+		}
+		
+		
+	}
+	
+	public int addgoodlog(Map map) {
+		SqlSession sql =factory.openSession();
+		try {
+			int r = sql.insert("board.addDataUsingMap",map);
+			if(r==1)
+				sql.commit();
+			return r;
+		}catch(Exception e) {
+			e.printStackTrace();
+			return -1;
+		}
+		
+	}
+	
+	public int uplogby(String ii) {
+		
+		SqlSession sql =factory.openSession();
+		try {
+			
+				
+			int	a =sql.insert("board.getSomeDataByActor",ii);
+				
+			return a;
+				
+		}catch(Exception e) {
+			e.printStackTrace();
+			return -1;
+		}
+		
+	}
+	
+	
+
+	
 	
 	/*
 	

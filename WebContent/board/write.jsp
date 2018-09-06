@@ -24,15 +24,18 @@
 		String title=(String)map.get("TITLE");
 		Date leftdate =(Date)map.get("LEFTDATE");
 		String content =(String)map.get("CONTENT");
-		String attach =(String)map.get("ATTACH");%>
-		no.<%=no %> : <%=title %><br/>				
-		   작성시간 : <%=leftdate %><br/>
-		   파일 : 
+		String attach =(String)map.get("ATTACH");
+		Number good =(Number)map.get("GOOD");
+		%>
+		
+		no.<%=no %>/ 제목 : <a   href="<%=application.getContextPath()%>/board/writeview.jsp?no=<%=no%>"><%=title %></a><br/>				
+		   작성시간 : <%=leftdate %> / 추천수 : <%=good %><br/>
+		 <%--   파일 : 
 		  		 <%if(map.get("ATTACH").equals("open")){ %>
 				없음.
 				<%}else{ %>
-				<a download href="<%=attach%>">다운</a>
-				<%} %><br/><br/>
+				<a  download href="<%=attach%>">다운</a>
+				<%} %> --%><br/><br/>
 -------------------------------------------------------------------------------------------------------
 <br/><br/>
 		
@@ -42,6 +45,7 @@
 			<br/>
 			<br/>
 		<a href="write1.jsp">게시글 쓰기</a>
+		
 
 
 </body>

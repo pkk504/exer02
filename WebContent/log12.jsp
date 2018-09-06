@@ -16,6 +16,7 @@
 <%! %>
 
 
+
 <%
 Account acc = new Account();
 List<Map<String, Object>> datas = acc.getAllDatas();
@@ -48,23 +49,24 @@ Set<String> set =(Set)application.getAttribute("users");
 
 
 %>
-<%@ include file="/layout/top.jspf"%>
 	<p>
 		<form action ="game/index.jsp">
 		<%
 		if(n==1&&!set.contains(id)){%>
+		<%@ include file="/layout/top.jspf"%>
 			로그인에 성공하였습니다.
 			<%session.setAttribute("loginid", id); %>
 			<%session.setAttribute("password", pass); %>
 			<%set.add(id); %>
 			<%application.setAttribute("users", set); %>
+			<%session.setAttribute("latest", new Date(System.currentTimeMillis())); %>
 			<button type ="submit">게임방 들어가기</button>
 			</form>
 			<br/>
 			
 			
 		<% }else if(set.contains(id)||n==0){%>
-		
+		<%@ include file="/layout/logtop.jspf"%>
 		
 		실패하였습니다.
 		

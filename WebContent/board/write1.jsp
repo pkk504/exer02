@@ -22,6 +22,7 @@
 	
 		<button type="submit">등록</button>
 	</form>
+	
 
 </body>
 </html>

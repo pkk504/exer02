@@ -1,0 +1,49 @@
+<%@page import="java.util.HashMap"%>
+<%@page import="java.util.Map"%>
+<%@page import="beans.BatisDao"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%-- <%int no=Integer.parseInt(request.getParameter("no")); %> --%>
+    <%int no=Integer.parseInt(request.getParameter("no")); %>
+    
+    <%BatisDao dao =new BatisDao();
+    String id =(String)session.getAttribute("loginid");   
+    Map one = dao.getondata(no);
+    Number noo = (Number)one.get("NO");
+   /* int r= dao.goodUp(no); */
+  /*  System.out.println(r); */
+   
+   Map map=new HashMap();
+   map.put("actor", id);
+   map.put("no", no);
+   
+  
+  
+  int target =dao.uplogby(id); 
+    	
+    
+    
+    
+    
+    %>
+<%@ include file="/layout/top.jspf"%>
+	<%-- <%
+	if(r==1&&a==1){%>
+<a  href="<%=application.getContextPath()%>/board/write.jsp">뒤로가기</a>
+	성공
+	<%}else if(r!=1){%>
+	 
+	실패하셨습니다.
+	<a  href="<%=application.getContextPath()%>/board/write.jsp">뒤로가기</a>
+	<%}else if(a!=1){ %>
+	추천을 한번 찍으셔서 실패하셨습니다.
+	<%} %> --%>
+	<% if(target==-1){
+			dao.addgoodlog(map);%>
+			성공하셨습니다.
+	<% }else if(target!=-1){%>
+	이미 추천하신 게시글입니다.
+	<% }%>
+	
+</body>
+</html>

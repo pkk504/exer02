@@ -130,7 +130,7 @@
 	
 	</form>
 	<br/>
-	<form action="<%=application.getContextPath() %> /change/change.jsp">
+	<form action="<%=application.getContextPath() %>/change/change.jsp">
 	
 		<button type="submit" style="text-aligb: center;font-size: 8pt">비밀번호변경</button>
 		

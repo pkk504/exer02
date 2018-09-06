@@ -52,7 +52,7 @@
 					<%=request.getContextPath() %>/storage/<%=fn %><br/> --%>
 					<%out.println("파일이름 =" + fn); %>
 				<%if(fn!=null){ %>
-		<% 	map.put("attach",application.getContextPath()+ "/storage/"+time+"/"+fn);%>
+		<% 	map.put("attach","/storage/"+time+"/"+fn);%>
 				<%-- <a download href="<%=application.getContextPath()%>/storage/<%=time %>/<%=fn%>">다운</a> --%>
 				<%}else if(fn==null){ %>
 				<% map.put("attach","open");%>

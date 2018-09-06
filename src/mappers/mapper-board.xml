@@ -18,6 +18,24 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	</select>
 	
+		<select id="getOnData" resultType="java.util.HashMap" parameterType="java.lang.Integer" >
+		select * from board where no=#{no}
+	
+	</select>
+	
+	<update id="incGood" parameterType="java.lang.Integer">
+		update board set good=good+1 where no=#{no}
+		
+	</update>
+	
+	<insert id="addDataUsingMap" parameterType="java.util.HashMap">
+		insert into goodlog values(#{actor}, #{no})
+	</insert>
+	<select id="getSomeDataByActor" resultType="java.lang.Integer" parameterType="java.lang.String">
+		select target from goodlog where actor=#{actor}
+	</select>
+	
+	
 	
 	<!-- 	<insert id="addTrash" parameterType="java.util.HashMap">
 		insert into baseresult values(#{serial}, #{player}, 3,2.2112,sysdate)
