@@ -19,13 +19,15 @@
    
   
   
-  int target =dao.uplogby(id); 
+   /* int target =dao.uplogby(id);  */
     	
+			%>
+			<%int a = dao.addgoodlog(map); %>
     
     
     
     
-    %>
+   
 <%@ include file="/layout/top.jspf"%>
 	<%-- <%
 	if(r==1&&a==1){%>
@@ -38,12 +40,15 @@
 	<%}else if(a!=1){ %>
 	추천을 한번 찍으셔서 실패하셨습니다.
 	<%} %> --%>
-	<% if(target==-1){
-			dao.addgoodlog(map);%>
-			성공하셨습니다.
-	<% }else if(target!=-1){%>
-	이미 추천하신 게시글입니다.
-	<% }%>
+	<%if(a==1){ %>
+	dao.goodUp(no);
+	성공<br/>
+	<a   href="<%=application.getContextPath()%>/board/writeview.jsp?no=<%=no%>">뒤로가기</a>
+	<%}else{ %>
+	실패<br/>
+		<a   href="<%=application.getContextPath()%>/board/writeview.jsp?no=<%=no%>">뒤로가기</a>
+	<%} %>
+	
 	
 </body>
 </html>

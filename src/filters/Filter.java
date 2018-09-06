@@ -17,6 +17,8 @@ public class Filter extends HttpFilter{
 protected void doFilter(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
 		throws IOException, ServletException {
 	 HttpSession session =request.getSession();
+	String query= request.getQueryString();
+		String uri = request.getRequestURI();
 	
 		
 		
@@ -26,9 +28,13 @@ protected void doFilter(HttpServletRequest request, HttpServletResponse response
 			
 	
 		chain.doFilter(request, response);
+		session.removeAttribute("uri");
+		session.removeAttribute("query");
 		
 	 
 	}else if(session.getAttribute("loginid")==null){
+		session.setAttribute("uri", uri);
+		session.setAttribute("query", query);
 	
 		response.sendRedirect("/exer02/index.jsp");
 	}

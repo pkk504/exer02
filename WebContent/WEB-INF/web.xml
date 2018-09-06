@@ -41,8 +41,53 @@
 
 <filter-mapping>
 	<filter-name>board</filter-name>
-	<url-pattern>/board/*</url-pattern>
+	<url-pattern>/board/write1.jsp</url-pattern>
 </filter-mapping>
+
+<filter>
+	<filter-name>board1</filter-name>
+	<filter-class>filters.Filter</filter-class>
+</filter>
+
+<filter-mapping>
+	<filter-name>board1</filter-name>
+	<url-pattern>/board/write1.jsp</url-pattern>
+</filter-mapping>
+
+<filter>
+	<filter-name>board2</filter-name>
+	<filter-class>filters.Filter</filter-class>
+</filter>
+
+<filter-mapping>
+	<filter-name>board2</filter-name>
+	<url-pattern>/board/write2.jsp</url-pattern>
+</filter-mapping>
+
+<filter>
+	<filter-name>board3</filter-name>
+	<filter-class>filters.Filter</filter-class>
+</filter>
+
+<filter-mapping>
+	<filter-name>board3</filter-name>
+	<url-pattern>/board/good.jsp</url-pattern>
+</filter-mapping>
+
+<filter>
+	<filter-name>board4</filter-name>
+	<filter-class>filters.Filter</filter-class>
+</filter>
+
+<filter-mapping>
+	<filter-name>board4</filter-name>
+	<url-pattern>/board/writeview.jsp</url-pattern>
+</filter-mapping>
+
+
+
+
+
 
 
 

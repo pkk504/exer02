@@ -63,6 +63,13 @@ Set<String> set =(Set)application.getAttribute("users");
 			<button type ="submit">게임방 들어가기</button>
 			</form>
 			<br/>
+			<%if(session.getAttribute("uri")!=null) {
+				String uri= (String)session.getAttribute("uri");
+				String query= (String)session.getAttribute("query");
+				response.sendRedirect(uri+(query!=null? "?"+query:""));
+			}
+
+			%>
 			
 			
 		<% }else if(set.contains(id)||n==0){%>

@@ -115,7 +115,7 @@ public class BatisDao {
 		try {
 			
 				
-			int	a =sql.insert("board.getSomeDataByActor",ii);
+			int	a =sql.selectOne("board.getSomeDataByActor",ii);
 				
 			return a;
 				
