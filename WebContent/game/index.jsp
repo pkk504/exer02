@@ -109,7 +109,7 @@
 		%> --%>
 		<br/>
 	</p>
-		<form action="logout.jsp">
+		<form action="<%=application.getContextPath()%>/logout.jsp">
 	
 	
 		<button type="submit" style="text-aligb: center;font-size: 15pt">로그아웃</button>
